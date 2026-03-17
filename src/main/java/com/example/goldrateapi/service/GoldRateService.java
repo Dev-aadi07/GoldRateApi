@@ -2,19 +2,20 @@ package com.example.goldrateapi.service;
 
 import java.util.List;
 
-import com.example.goldrateapi.entity.GoldRate;
+import com.example.goldrateapi.dto.GoldRateRequest;
+import com.example.goldrateapi.dto.GoldRateResponse;
 
 public interface GoldRateService {
 	
-	GoldRate create(GoldRate goldRate);
+	GoldRateResponse create(GoldRateRequest goldRate);
 	
-	List<GoldRate> getAll();
+	List<GoldRateResponse> getAll();
 	
-	GoldRate getById(Long id);
+	GoldRateResponse getById(Long id);
 	
-	GoldRate getLatest();
+	GoldRateResponse getLatest();
 	
-	GoldRate update(Long id, GoldRate goldRate);
+	GoldRateResponse update(Long id, GoldRateRequest goldRate);
 	
 	void delete(Long id);
 	

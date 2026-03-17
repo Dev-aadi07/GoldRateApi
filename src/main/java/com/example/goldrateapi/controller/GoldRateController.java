@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.goldrateapi.entity.GoldRate;
+import com.example.goldrateapi.dto.GoldRateRequest;
+import com.example.goldrateapi.dto.GoldRateResponse;
 import com.example.goldrateapi.service.GoldRateService;
 
 @RestController
@@ -26,31 +27,31 @@ public class GoldRateController {
 	
 	//CREATE
 	@PostMapping
-	public GoldRate create(@RequestBody GoldRate rate) {
+	public GoldRateResponse create(@RequestBody GoldRateRequest rate) {
 		return service.create(rate);
 	}
 	
 	//READ
 	@GetMapping
-	public List<GoldRate> getAll() {
+	public List<GoldRateResponse> getAll() {
 		return service.getAll();
 	}
 	
 	//READ BY ID
 	@GetMapping("/{id}")
-	public GoldRate getById(@PathVariable Long id) {
+	public GoldRateResponse getById(@PathVariable Long id) {
 		return service.getById(id);
 	}
 	
 	//READ BY LATEST DATE
 	@GetMapping("/latest")
-	public GoldRate getLatest() {
+	public GoldRateResponse getLatest() {
 		return service.getLatest();
 	}
 	
 	//UPDATE
 	@PutMapping("/{id}")
-	public GoldRate update(@PathVariable Long id, @RequestBody GoldRate rate) {
+	public GoldRateResponse update(@PathVariable Long id, @RequestBody GoldRateRequest rate) {
 		return service.update(id, rate);
 	}
 	
